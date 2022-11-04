@@ -33,7 +33,7 @@ input, textarea {
   display: none;
 } */
 
-img {
+.gray-img {
   filter: grayscale(100%);
 }
 

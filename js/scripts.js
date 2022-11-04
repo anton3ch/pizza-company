@@ -103,6 +103,11 @@ document.getElementById("delivery").addEventListener("click", function(){
 document.getElementById("pizza-next").addEventListener("click", customizePizza);
 
 document.getElementById("custom-choice").addEventListener("click", function(event){
-  let element = event.target.id;
-  if(element.)
+  let elementId = event.target.getAttribute("id");
+  let element = document.getElementById(`${elementId}`);
+  if(element.hasAttribute("class")){
+    element.removeAttribute("class")
+  } else {
+    element.setAttribute("class", "gray-img")
+  }
 })
