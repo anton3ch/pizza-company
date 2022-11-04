@@ -34,3 +34,14 @@ Describe: Order.prototype.deletePizza(id)
 Test: "It should delete pizza object from inside Order object"
 Code: newOrder.deletePizza(1);
 Expected Output: {pizzas: {}, ...}
+
+
+Describe: Pizza.prototype.calculateCost()
+
+Test: "It should calculate cost of pizza based on topping quantity and size"
+Code: myPizza.calculateCost();
+Expected Output: Pizza {toppings: Array(3), size: 'medium', quantity: 1, cost: 29}
+
+Test: "It should calculate cost of pizza based on amount of toppings, size and pizza quantity"
+Code: myPizza.calculateCost();
+Expected Output: Pizza {toppings: Array(3), size: 'medium', quantity: 2, cost: 58}
