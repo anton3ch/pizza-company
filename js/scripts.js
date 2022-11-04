@@ -23,6 +23,13 @@ Order.prototype.deletePizza = function(id) {
   return true;
 };
 
+Order.prototype.findPizza = function(id) {
+  if (this.pizzas[id] !== undefined) {
+    return this.pizzas[id];
+  }
+  return false;
+};
+
 //Business logic for Pizza
 function Pizza (toppings, size, quantity) {
   this.toppings = toppings;
