@@ -60,3 +60,8 @@ Test: "It should return a Customer object with firstName, lastName, email and ad
 Code: const newCustomer = new Customer('John', 'Lennon', 'john.lennon@beatles.com', '123 beatle lane Beatler, BT 90210');
 Expected Output: Customer { firstName: 'John', lastName: 'Lennon',email: 'john.lennon@beatles.com', address: '123 beatle lane Beatler, BT 90210' }
 
+Describe: Order.prototype.addCustomer()
+
+Test: "It should nest customer object inside Order object"
+Code: newOrder.addCustomer(newCustomer);
+Expected Output: newOrder { ..., Customer { firstName: 'John', lastName: 'Lennon',email: 'john.lennon@beatles.com', address: '123 beatle lane Beatler, BT 90210' }, ... }

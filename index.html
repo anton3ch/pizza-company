@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/styles.css">
-  <script src="js/scripts.js"></script>
+  <script src="js/scripts.js" defer></script>
   <title>Pizza restaurant</title>
 </head>
 
@@ -35,7 +35,7 @@
       </label>
       <br>
     </div>
-    <button id="next-to-pizza">Make my pizza!</button>
+    <button type="button" id="pizza-next">Create pizza!</button>
   </div>
 
   <div id="pizza-selection">
@@ -65,9 +65,11 @@
       <input type="radio" id="custom" name="pizza-kind" value="custom">
     Custom</label>
     </div>
+
     <div class="hidden" id="sour-choice">sour ingredients</div>
     <div class="hidden" id="veggie-choice">veggie ingredients</div>
     <div class="hidden" id="everything-choice">everything ingredients</div>
+
     <div class="hidden" id="custom-choice">
       <label>Lemon
         <br>
@@ -103,6 +105,7 @@
         <input type="checkbox" id="" value="">
       </label>
     </div>
+    <button id="add-to-cart">Add to cart</button>
   </div>
 </body>
 </html>

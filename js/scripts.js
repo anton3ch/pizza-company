@@ -30,7 +30,9 @@ Order.prototype.deletePizza = function(id) {
   return true;
 };
 
-
+Order.prototype.addCustomer = function(customer) {
+  this.customer = customer;
+};
 
 //Business logic for Pizza
 function Pizza (toppings, size, quantity) {
@@ -71,7 +73,32 @@ function Customer(firstName, lastName, email, address) {
   
 
 // UI logic
-let Order = new Order();
-let newPizza = new Pizza(['lemon', 'ginger', 'coleslaw'], 'medium', 2);
-let Order = new Order();
-newPizza.calculateCost();
+let newOrder = new Order();
+// newPizza.calculateCost();
+
+function customizePizza() {
+  // event.preventDefault();
+  const firstName = document.getElementById("first-name").value;
+  const lastName = document.getElementById("last-name").value;
+  const email = document.getElementById("email").value;
+  // const address = document.getElementById("address").value;
+  let newCustomer = new Customer(firstName, lastName, email, address);
+  newOrder.add
+  document.getElementById("customer-info").setAttribute("class", "hidden");
+  document.getElementById("pizza-selection").removeAttribute("class");
+}
+
+
+document.getElementById("pick-up").addEventListener("click", function(){
+  document.getElementById("customer-info").removeAttribute("class");
+  document.getElementById("delivery-option").setAttribute("class", "hidden");
+});
+
+document.getElementById("delivery").addEventListener("click", function(){
+  document.getElementById("customer-info").removeAttribute("class");
+  document.getElementById("delivery-address").removeAttribute("class");
+  document.getElementById("delivery-option").setAttribute("class", "hidden");
+
+});
+
+document.getElementById("pizza-next").addEventListener("submit", customizePizza);
