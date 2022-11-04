@@ -15,6 +15,14 @@ Order.prototype.addPizza = function(pizza) {
   this.pizzas[pizza.id] = pizza;
 };
 
+Order.prototype.deletePizza = function(id) {
+  if (this.pizzas[id] === undefined) {
+    return false;
+  }
+  delete this.pizzas[id];
+  return true;
+};
+
 //Business logic for Pizza
 function Pizza (toppings, size, quantity) {
   this.toppings = toppings;
@@ -23,4 +31,3 @@ function Pizza (toppings, size, quantity) {
   this.cost = 0;
   }
  
-

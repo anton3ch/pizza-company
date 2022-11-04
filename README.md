@@ -29,3 +29,8 @@ Test: "It should nest pizza object inside Order object and assign Id"
 Code: newOrder.addPizza(myPizza);
 Expected Output: pizzas: {1: Pizza {toppings: ["lemon", "ginger", "coleslaw"], size: "medium", quantity: 2, cost: 0, id: 1} }
 
+Describe: Order.prototype.deletePizza(id)
+
+Test: "It should delete pizza object from inside Order object"
+Code: newOrder.deletePizza(1);
+Expected Output: {pizzas: {}, ...}
