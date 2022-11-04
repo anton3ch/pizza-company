@@ -29,6 +29,14 @@ Test: "It should nest pizza object inside Order object and assign Id"
 Code: newOrder.addPizza(myPizza);
 Expected Output: pizzas: {1: Pizza {toppings: ["lemon", "ginger", "coleslaw"], size: "medium", quantity: 2, cost: 0, id: 1} }
 
+
+Describe: Order.prototype.findPizza(id)
+
+Test: "It should find a pizza object by id"
+Code: newOrder.findPizza(1)
+Expected Output: Pizza {toppings: Array(3), size: 'medium', quantity: 2, cost: 29, id: 1}
+
+
 Describe: Order.prototype.deletePizza(id)
 
 Test: "It should delete pizza object from inside Order object"
@@ -47,8 +55,8 @@ Code: myPizza.calculateCost();
 Expected Output: Pizza {toppings: Array(3), size: 'medium', quantity: 2, cost: 58, id: 1}
 
 
-Describe: Order.prototype.findPizza(id)
+Describe: Customer()
+Test: "It should return a Customer object with firstName, lastName, email and address properties"
+Code: const newCustomer = new Customer('John', 'Lennon', 'john.lennon@beatles.com', '123 beatle lane Beatler, BT 90210');
+Expected Output: Customer { firstName: 'John', lastName: 'Lennon',email: 'john.lennon@beatles.com', address: '123 beatle lane Beatler, BT 90210' }
 
-Test: "It should find a pizza object by id"
-Code: newOrder.findPizza(1)
-Expected Output: Pizza {toppings: Array(3), size: 'medium', quantity: 2, cost: 29, id: 1}

@@ -15,6 +15,13 @@ Order.prototype.addPizza = function(pizza) {
   this.pizzas[pizza.id] = pizza;
 };
 
+Order.prototype.findPizza = function(id) {
+  if (this.pizzas[id] !== undefined) {
+    return this.pizzas[id];
+  }
+  return false;
+};
+
 Order.prototype.deletePizza = function(id) {
   if (this.pizzas[id] === undefined) {
     return false;
@@ -23,12 +30,7 @@ Order.prototype.deletePizza = function(id) {
   return true;
 };
 
-Order.prototype.findPizza = function(id) {
-  if (this.pizzas[id] !== undefined) {
-    return this.pizzas[id];
-  }
-  return false;
-};
+
 
 //Business logic for Pizza
 function Pizza (toppings, size, quantity) {
@@ -57,7 +59,19 @@ function Pizza (toppings, size, quantity) {
       }
     }
   };
+
+  //Business logic for Customer
+
+  function Customer(firstName, lastName, email, address) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+    this.address = address;
+  }
   
+
+// UI logic
+let Order = new Order();
   let newPizza = new Pizza(['lemon', 'ginger', 'coleslaw'], 'medium', 2);
-  let newOrder = new Order();
+  let Order = new Order();
   newPizza.calculateCost();
