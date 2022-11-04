@@ -13,3 +13,11 @@ Describe: Order()
 Test: "It should return an Order object with three properties for pizzas, customer and currentId"
 Code: const newOrder = new Order();
 Expected Output: Order { Pizzas: {}, customer: {}, currentId = 0 }
+
+Describe: Order.assignId()
+
+Test: "It should increment id by 1"
+Code: order.assignId();
+Expected Output: this.currentId = 1;
+
+
