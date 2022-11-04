@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/jquery-3.6.1.js"></script>
   <script src="js/scripts.js" defer></script>
   <title>Pizza restaurant</title>
 </head>
@@ -41,78 +42,99 @@
   <div id="pizza-selection" class="hidden">
 
     <div id="size-options">
-      <label></label>
+      <label>
+        <img src="img/pizza.png" alt="small" width="50px">
+        <br>
         <input type="radio" id="small" name="pizza-size" value="small">
       Small</label>
       <label>
+        <img src="img/pizza.png" alt="small" width="70px">
+        <br>
         <input type="radio" id="medium" name="pizza-size" value="medium">
       Medium</label>
       <label>
+        <img src="img/pizza.png" alt="small" width="90px">
+        <br>
         <input type="radio" id="large" name="pizza-size" value="large">
       Large</label>
     </div>
 
     <div id="pizza-options">
       <label>
-      <input type="radio" id="Sour" name="pizza-kind" value="Sour">
-    Sour Delight</label>
+      <input type="radio" id="sweet" name="pizza-kind" value="sweet">
+    Sweet Euphoria</label>
     <label>
       <input type="radio" id="veggie" name="pizza-kind" value="veggie">
     Veggiezilla</label>
     <label>
-      <input type="radio" id="everything" name="pizza-kind" value="everything">
+      <input type="radio" id="muscle" name="pizza-kind" value="muscle">
     Feast for the Beast</label>
     <label>
       <input type="radio" id="custom" name="pizza-kind" value="custom">
     Custom</label>
     </div>
 
-    <div class="hidden" id="sour-choice">sour ingredients</div>
-    <div class="hidden" id="veggie-choice">veggie ingredients</div>
-    <div class="hidden" id="everything-choice">everything ingredients</div>
+    <div class="hidden selectt" id="sweet-choice">Ingredients:
+      <br>
+      <img src="img/Banana.png" alt="banana" width="90px">
+      <img src="img/Honey.png" alt="honey" width="90px">
+      <img src="img/Chocolate.png" alt="chocolate" width="90px">
+    </div>
+    <div class="hidden selectt" id="veggie-choice">Ingredients:
+      <br>
+      <img src="img/Beet.png" alt="banana" width="90px">
+      <img src="img/Ginger.png" alt="ginger" width="90px">
+      <img src="img/Pickle.png" alt="pickles" width="90px">
+    </div>
+    <div class="hidden selectt" id="muscle-choice">Ingredients:
+      <br>
+      <img src="img/Banana.png" alt="banana" width="90px">
+      <img src="img/Protein.png" alt="protein powder" width="90px">
+    </div>
+    <div class="hidden selectt" id="custom-choice">
 
-    <div class="hidden" id="custom-choice">
       <label>
         <img class='gray-img' src="img/Banana.png" alt="banana" id="1">
         <br>
-        <input type="checkbox" id="" value="">
+        <input type="checkbox" id="" value="banana">
       </label>
       <label>
-        <img class='gray-img' src="img/beet.png" alt="beet" id="2">
+        <img class='gray-img' src="img/Beet.png" alt="beet" id="2">
         <br>
-        <input type="checkbox" id="" value="">
+        <input type="checkbox" id="" value="beet">
       </label>
       <label>
         <img class='gray-img' src="img/chocolate.png" alt="chocolate" id="3">
         <br>
-        <input type="checkbox" id="" value="">
+        <input type="checkbox" id="" value="chocolate">
       </label>
       <label>
-        <img class='gray-img' src="img/ginger.png" alt="ginger" id="4">
+        <img class='gray-img' src="img/Ginger.png" alt="ginger" id="4">
         <br>
-        <input type="checkbox" id="" value="">
+        <input type="checkbox" id="" value="ginger">
       </label>
       <br>
       <label>
         <img class='gray-img' src="img/Honey.png" alt="honey" id="5">
         <br>
-        <input type="checkbox" id="" value="">
+        <input type="checkbox" id="" value="honey">
       </label>
       <label>
         <img class='gray-img' src="img/Lemon.png" alt="lemon" id="6">
         <br>
-        <input type="checkbox" id="" value="">
+        <input type="checkbox" id="" value="lemon">
       </label>
       <label>
         <img class='gray-img' src="img/Pickle.png" alt="Pickle" id="7">
         <br>
-        <input type="checkbox" id="" value="">
+        <input type="checkbox" id="" value="pickle">
       </label>
       <label>
         <img class='gray-img' src="img/Protein.png" alt="protein powder" id="8">
         <br>
-        <input type="checkbox" id="" value="">
+        <input type="checkbox" id="" value="protein">
       </label>
+
     </div>
     <button id="add-to-cart">Add to cart</button>
   </div>

@@ -111,3 +111,12 @@ document.getElementById("custom-choice").addEventListener("click", function(even
     element.setAttribute("class", "gray-img")
   }
 })
+
+$(document).ready(function() {
+  $('input[name="pizza-kind"]').click(function() {
+      var inputValue = $(this).attr("value");
+      var targetBox = $("#" + inputValue + "-choice");
+      $(".selectt").not(targetBox).hide();
+      $(targetBox).show();
+  });
+});
