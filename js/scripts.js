@@ -1,6 +1,14 @@
-function Pizza (toppings, size, quantity, cost) {
-this.toppings = toppings;
-this.size = size;
-this.quantity = quantity;
-this.cost = cost;
+function Order() {
+  this.pizzas = {};
+  this.customer = {};
+  this.currentId = 0;
 }
+
+function Pizza (toppings, size, quantity) {
+  this.toppings = toppings;
+  this.size = size;
+  this.quantity = quantity;
+  this.cost = 0;
+  }
+  
+
