@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/scripts.js"></script>
+  <title>Pizza restaurant</title>
+</head>
+
+<body class="container text-center">
+
+  <div id="delivery-option">
+    <button id="pick-up">Pick Up</button>
+    <button id="delivery">Delivery</button>
+  </div>
+
+  <div class="hidden" id="customer-info">
+    <label>First Name:
+      <input type="text" name="firstName" id="first-name">
+    </label>
+    <label>Last Name:
+      <input type="text" name="lastName" id="last-name">
+    </label>
+    <br>
+    <label>Email:
+      <input type="email" name="email" id="email">
+    </label>
+    <br>
+    <div class="hidden" id="delivery-address">
+      <label>Address:
+        <input type="text" id="address">
+      </label>
+      <br>
+    </div>
+    <button id="next-to-pizza">Make my pizza!</button>
+  </div>
+
+  <div id="pizza-selection">
+    <div class="hidden" id="size-options">
+      <label></label>
+        <input type="radio" id="small" name="pizza-size" value="small">
+      Small</label>
+      <label>
+        <input type="radio" id="medium" name="pizza-size" value="medium">
+      Medium</label>
+      <label>
+        <input type="radio" id="large" name="pizza-size" value="large">
+      Large</label>
+    </div>
+
+    <div class="hidden" id="pizza-options">
+      <label></label>
+      <input type="radio" id="Sour" name="pizza-kind" value="Sour">
+    Sour Delight</label>
+    <label>
+      <input type="radio" id="veggie" name="pizza-kind" value="veggie">
+    Veggiezilla</label>
+    <label>
+      <input type="radio" id="everything" name="pizza-kind" value="everything">
+    Feast for the Beast</label>
+    <label>
+      <input type="radio" id="custom" name="pizza-kind" value="custom">
+    Custom</label>
+    </div>
+    <div class="hidden" id="sour-choice">sour ingredients</div>
+    <div class="hidden" id="veggie-choice">veggie ingredients</div>
+    <div class="hidden" id="everything-choice">everything ingredients</div>
+    <div class="hidden" id="custom-choice">
+      <label>Lemon
+        <input type="checkbox" id="" value="">
+      </label>
+      <label>Beats
+        <input type="checkbox" id="" value="">
+      </label>
+      <label>Ginger
+        <input type="checkbox" id="" value="">
+      </label>
+      <label>Coleslaw
+        <input type="checkbox" id="" value="">
+      </label>
+      <label>Radish
+        <input type="checkbox" id="" value="">
+      </label>
+      <label>Banana
+        <input type="checkbox" id="" value="">
+      </label>
+      <label>Sour Cream
+        <input type="checkbox" id="" value="">
+      </label>
+      <label>Protein Powder
+        <input type="checkbox" id="" value="">
+      </label>
+    </div>
+  </div>
+</body>
+</html>

@@ -40,38 +40,38 @@ function Pizza (toppings, size, quantity) {
   this.cost = 0;
   }
  
-  Pizza.prototype.calculateCost = function() {
-    const toppingsQuantity = this.toppings.length;
-    this.cost = 0;
-    for(let i = 1; i <= this.quantity; i++){
-      this.cost += toppingsQuantity * 3;
-    
-      switch(this.size) {
-        case ("small"):
-          this.cost += 10;
-          break;
-        case ("medium"):
-          this.cost += 20;
-          break;
-        case ("large"):
-          this.cost += 50;
-          break;
-      }
+Pizza.prototype.calculateCost = function() {
+  const toppingsQuantity = this.toppings.length;
+  this.cost = 0;
+  for(let i = 1; i <= this.quantity; i++){
+    this.cost += toppingsQuantity * 3;
+  
+    switch(this.size) {
+      case ("small"):
+        this.cost += 10;
+        break;
+      case ("medium"):
+        this.cost += 20;
+        break;
+      case ("large"):
+        this.cost += 50;
+        break;
     }
-  };
-
-  //Business logic for Customer
-
-  function Customer(firstName, lastName, email, address) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.email = email;
-    this.address = address;
   }
+};
+
+//Business logic for Customer
+
+function Customer(firstName, lastName, email, address) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.email = email;
+  this.address = address;
+}
   
 
 // UI logic
 let Order = new Order();
-  let newPizza = new Pizza(['lemon', 'ginger', 'coleslaw'], 'medium', 2);
-  let Order = new Order();
-  newPizza.calculateCost();
+let newPizza = new Pizza(['lemon', 'ginger', 'coleslaw'], 'medium', 2);
+let Order = new Order();
+newPizza.calculateCost();
