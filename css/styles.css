@@ -29,6 +29,14 @@ input, textarea {
   background-color: #6e3b0b7a;
 }
 
-.hidden {
+/* .hidden {
   display: none;
+} */
+
+img {
+  filter: grayscale(100%);
+}
+
+label {
+  padding: 20px;
 }

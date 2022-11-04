@@ -77,13 +77,12 @@ let newOrder = new Order();
 // newPizza.calculateCost();
 
 function customizePizza() {
-  // event.preventDefault();
-  const firstName = document.getElementById("first-name").value;
-  const lastName = document.getElementById("last-name").value;
-  const email = document.getElementById("email").value;
-  // const address = document.getElementById("address").value;
+  const firstName = document.querySelector("input#first-name").value;
+  const lastName = document.querySelector("input#last-name").value;
+  const email = document.querySelector("input#email").value;
+  const address = document.querySelector("input#address").value;
   let newCustomer = new Customer(firstName, lastName, email, address);
-  newOrder.add
+  newOrder.addCustomer(newCustomer);
   document.getElementById("customer-info").setAttribute("class", "hidden");
   document.getElementById("pizza-selection").removeAttribute("class");
 }
@@ -101,4 +100,9 @@ document.getElementById("delivery").addEventListener("click", function(){
 
 });
 
-document.getElementById("pizza-next").addEventListener("submit", customizePizza);
+document.getElementById("pizza-next").addEventListener("click", customizePizza);
+
+document.getElementById("custom-choice").addEventListener("click", function(event){
+  let element = event.target.id;
+  if(element.)
+})
