@@ -75,15 +75,20 @@ function Customer(firstName, lastName, email, address) {
 // UI logic
 let newOrder = new Order();
 
-function customizePizza() {
+function customerInfo() {
   const firstName = document.querySelector("input#first-name").value;
   const lastName = document.querySelector("input#last-name").value;
   const email = document.querySelector("input#email").value;
   const address = document.querySelector("input#address").value;
-  let newCustomer = new Customer(firstName, lastName, email, address);
-  newOrder.addCustomer(newCustomer);
-  document.getElementById("customer-info").setAttribute("class", "hidden");
-  document.getElementById("pizza-selection").removeAttribute("class");
+  if(firstName && lastName && email) {
+    let newCustomer = new Customer(firstName, lastName, email, address);
+    newOrder.addCustomer(newCustomer);
+    document.getElementById("customer-info").setAttribute("class", "hidden");
+    document.getElementById("pizza-selection").removeAttribute("class");
+    $("#input-info").hide();
+  } else {
+    $("#input-info").show();
+  }
 }
 
 function displayReceipt() {
@@ -117,7 +122,6 @@ function handleOrder() {
   displayReceipt();
 }
 
-
 document.getElementById("pick-up").addEventListener("click", function(){
   document.getElementById("customer-info").removeAttribute("class");
   document.getElementById("delivery-option").setAttribute("class", "hidden");
@@ -130,7 +134,7 @@ document.getElementById("delivery").addEventListener("click", function(){
 
 });
 
-document.getElementById("pizza-next").addEventListener("click", customizePizza);
+document.getElementById("pizza-next").addEventListener("click", customerInfo);
 document.getElementById("place-order").addEventListener("click", handleOrder);
 
 document.getElementById("custom-choice").addEventListener("click", function(event){
