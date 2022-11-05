@@ -14,7 +14,7 @@
 <body class="container text-center">
 
   <div id="delivery-option">
-    <button id="pick-up">Pick Up</button>
+    <button id="pick-up" class="button-52">Pick Up</button>
     <button id="delivery">Delivery</button>
   </div>
 
@@ -50,7 +50,7 @@
       <label>
         <img src="img/pizza.png" alt="small" width="70px">
         <br>
-        <input type="radio" id="medium" name="pizza-size" value="medium">
+        <input type="radio" id="medium" name="pizza-size" value="medium" checked>
       Medium</label>
       <label>
         <img src="img/pizza.png" alt="small" width="90px">
@@ -136,7 +136,11 @@
       </label>
 
     </div>
-    <button id="add-to-cart">Add to cart</button>
+    <button id="place-order">Place the order</button>
   </div>
+  <div id="receipt" class="hidden">
+    <h2 id="h2-receipt">Thank you for your order!</h2>
+  </div>
+
 </body>
 </html>

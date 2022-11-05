@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
 html {
   background-image: url(../img/bg.jpg);
   background-repeat: no-repeat;
@@ -8,6 +10,8 @@ html {
 
 body {
   color: antiquewhite;
+  font-family: 'Italianno', cursive;
+  font-size: 2em;
   background: rgb(0,0,0);
   background: linear-gradient(0deg, rgba(0,0,0,0.42200630252100846) 0%, rgba(17,15,14,0.923406862745098) 100%);
   border-radius: 25px;
@@ -58,4 +62,18 @@ img {
 #custom-choice img {
   width: 60px;
   margin: 10px;
+}
+
+button {
+  padding: 20px;
+  margin: 50px;
+}
+
+#receipt {
+  margin: auto;
+  padding: 20px;
+}
+
+#receipt h2 {
+  font-size: 3em;
 }

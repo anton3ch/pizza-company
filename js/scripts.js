@@ -43,7 +43,7 @@ function Pizza (toppings, size, quantity) {
   }
  
 Pizza.prototype.calculateCost = function() {
-  const toppingsQuantity = this.toppings.length;
+  const toppingsQuantity = this.toppings;
   this.cost = 0;
   for(let i = 1; i <= this.quantity; i++){
     this.cost += toppingsQuantity * 3;
@@ -74,7 +74,6 @@ function Customer(firstName, lastName, email, address) {
 
 // UI logic
 let newOrder = new Order();
-// newPizza.calculateCost();
 
 function customizePizza() {
   const firstName = document.querySelector("input#first-name").value;
@@ -85,6 +84,37 @@ function customizePizza() {
   newOrder.addCustomer(newCustomer);
   document.getElementById("customer-info").setAttribute("class", "hidden");
   document.getElementById("pizza-selection").removeAttribute("class");
+}
+
+function displayReceipt() {
+  const h2 = document.getElementById("h2-receipt");
+  const total = document.createElement("p");
+  total.append("Your total is $" + newOrder.pizzas[1].cost);
+  h2.append(total);
+  $('#receipt').show();
+  $('#pizza-selection').hide();
+}
+
+function handleOrder() {
+  let size = $('input[name="pizza-size"]:checked').val();
+  let pizzaKind = $('input[name="pizza-kind"]:checked').val();
+  let toppings;
+  let quantity = 1;
+  if(pizzaKind !== "undefined") {
+    if(pizzaKind === 'sweet' || pizzaKind === 'veggie') {
+      toppings = 3;
+    } else if (pizzaKind === 'muscle') {
+      toppings = 2;
+    } else {
+      toppings = $(":checkbox:checked").length;
+    }
+  } else {
+    window.alert("please select your pizza");
+  }
+  let newPizza = new Pizza (toppings, size, quantity);
+  newOrder.addPizza(newPizza);
+  newPizza.calculateCost();
+  displayReceipt();
 }
 
 
@@ -101,6 +131,7 @@ document.getElementById("delivery").addEventListener("click", function(){
 });
 
 document.getElementById("pizza-next").addEventListener("click", customizePizza);
+document.getElementById("place-order").addEventListener("click", handleOrder);
 
 document.getElementById("custom-choice").addEventListener("click", function(event){
   let elementId = event.target.getAttribute("id");
