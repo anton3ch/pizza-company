@@ -155,3 +155,12 @@ $(document).ready(function() {
       $(targetBox).show();
   });
 });
+
+document.querySelector('#scrollable').addEventListener('wheel', preventScroll, {passive: false});
+
+function preventScroll(e){
+    e.preventDefault();
+    e.stopPropagation();
+
+    return false;
+}

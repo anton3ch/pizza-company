@@ -1,4 +1,4 @@
-# Mr. Pizza company
+# Pizza company
 
 #### By Anton Ch
 
@@ -14,6 +14,8 @@
 
 
 ## Description
+
+Web-page for pizza company where a user can choose a pizza size and one or more individual toppings. Then the total cost is calculated based on the user selection.
 
 
 
