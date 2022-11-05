@@ -11,12 +11,12 @@
   <title>Pizza restaurant</title>
 </head>
 
-<body class="text-center" id="scrollable">
+<body class="text-center">
   <img src="img/logo.png" alt="Tony's pizza" class="logo">
   <div class="main container text-center">
     <div id="delivery-option">
-      <button id="pick-up" class="button-52">Pick Up</button>
-      <button id="delivery">Delivery</button>
+      <button id="pick-up" class="btn-grad">Pick Up</button>
+      <button id="delivery" class="btn-grad">Delivery</button>
     </div>
 
     <div class="hidden" id="customer-info">
@@ -38,11 +38,11 @@
         </label>
         <br>
       </div>
-      <button type="button" id="pizza-next">Create pizza!</button>
+      <button type="button" class="btn-grad" id="pizza-next">Create pizza!</button>
     </div>
 
     <div id="pizza-selection" class="hidden">
-
+      <h2 class="hidden" id="input-pizza">Please select your pizza</h2>
       <div id="size-options">
         <label>
           <img src="img/pizza.png" alt="small" width="50px">
@@ -93,52 +93,52 @@
         <img src="img/Banana.png" alt="banana" width="90px">
         <img src="img/Protein.png" alt="protein powder" width="90px">
       </div>
-      <div class="hidden selectt" id="custom-choice">
 
-        <label>
+      <div class="hidden selectt" id="custom-choice">
+        <label class="ingredients">
           <img class='gray-img' src="img/Banana.png" alt="banana" id="1">
           <br>
-          <input type="checkbox" id="" value="banana">
+          <input type="checkbox" value="banana">
         </label>
-        <label>
+        <label class="ingredients">
           <img class='gray-img' src="img/Beet.png" alt="beet" id="2">
           <br>
-          <input type="checkbox" id="" value="beet">
+          <input type="checkbox" value="beet">
         </label>
-        <label>
+        <label class="ingredients">
           <img class='gray-img' src="img/chocolate.png" alt="chocolate" id="3">
           <br>
-          <input type="checkbox" id="" value="chocolate">
+          <input type="checkbox" value="chocolate">
         </label>
-        <label>
+        <label class="ingredients">
           <img class='gray-img' src="img/Ginger.png" alt="ginger" id="4">
           <br>
-          <input type="checkbox" id="" value="ginger">
+          <input type="checkbox" value="ginger">
         </label>
         <br>
-        <label>
+        <label class="ingredients">
           <img class='gray-img' src="img/Honey.png" alt="honey" id="5">
           <br>
-          <input type="checkbox" id="" value="honey">
+          <input type="checkbox" value="honey">
         </label>
-        <label>
+        <label class="ingredients">
           <img class='gray-img' src="img/Lemon.png" alt="lemon" id="6">
           <br>
-          <input type="checkbox" id="" value="lemon">
+          <input type="checkbox" value="lemon">
         </label>
-        <label>
+        <label class="ingredients">
           <img class='gray-img' src="img/Pickle.png" alt="Pickle" id="7">
           <br>
-          <input type="checkbox" id="" value="pickle">
+          <input type="checkbox" value="pickle">
         </label>
-        <label>
+        <label class="ingredients">
           <img class='gray-img' src="img/Protein.png" alt="protein powder" id="8">
           <br>
-          <input type="checkbox" id="" value="protein">
+          <input type="checkbox" value="protein">
         </label>
 
       </div>
-      <button id="place-order">Place the order</button>
+      <button id="place-order" class="btn-grad">Place the order</button>
     </div>
     <div id="receipt" class="hidden">
       <h2 id="h2-receipt">Thank you for your order!</h2>

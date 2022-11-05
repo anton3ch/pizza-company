@@ -15,20 +15,21 @@ Order.prototype.addPizza = function(pizza) {
   this.pizzas[pizza.id] = pizza;
 };
 
-Order.prototype.findPizza = function(id) {
-  if (this.pizzas[id] !== undefined) {
-    return this.pizzas[id];
-  }
-  return false;
-};
+//for further exploration
+// Order.prototype.findPizza = function(id) {
+//   if (this.pizzas[id] !== undefined) {
+//     return this.pizzas[id];
+//   }
+//   return false;
+// };
 
-Order.prototype.deletePizza = function(id) {
-  if (this.pizzas[id] === undefined) {
-    return false;
-  }
-  delete this.pizzas[id];
-  return true;
-};
+// Order.prototype.deletePizza = function(id) {
+//   if (this.pizzas[id] === undefined) {
+//     return false;
+//   }
+//   delete this.pizzas[id];
+//   return true;
+// };
 
 Order.prototype.addCustomer = function(customer) {
   this.customer = customer;
@@ -40,7 +41,7 @@ function Pizza (toppings, size, quantity) {
   this.size = size;
   this.quantity = quantity;
   this.cost = 0;
-  }
+}
  
 Pizza.prototype.calculateCost = function() {
   const toppingsQuantity = this.toppings;
@@ -63,7 +64,6 @@ Pizza.prototype.calculateCost = function() {
 };
 
 //Business logic for Customer
-
 function Customer(firstName, lastName, email, address) {
   this.firstName = firstName;
   this.lastName = lastName;
@@ -71,7 +71,6 @@ function Customer(firstName, lastName, email, address) {
   this.address = address;
 }
   
-
 // UI logic
 let newOrder = new Order();
 
@@ -105,7 +104,7 @@ function handleOrder() {
   let pizzaKind = $('input[name="pizza-kind"]:checked').val();
   let toppings;
   let quantity = 1;
-  if(pizzaKind !== "undefined") {
+  if(pizzaKind !== undefined) {
     if(pizzaKind === 'sweet' || pizzaKind === 'veggie') {
       toppings = 3;
     } else if (pizzaKind === 'muscle') {
@@ -113,13 +112,13 @@ function handleOrder() {
     } else {
       toppings = $(":checkbox:checked").length;
     }
+    let newPizza = new Pizza (toppings, size, quantity);
+    newOrder.addPizza(newPizza);
+    newPizza.calculateCost();
+    displayReceipt();
   } else {
-    window.alert("please select your pizza");
+    $("#input-pizza").show();
   }
-  let newPizza = new Pizza (toppings, size, quantity);
-  newOrder.addPizza(newPizza);
-  newPizza.calculateCost();
-  displayReceipt();
 }
 
 document.getElementById("pick-up").addEventListener("click", function(){
@@ -131,7 +130,6 @@ document.getElementById("delivery").addEventListener("click", function(){
   document.getElementById("customer-info").removeAttribute("class");
   document.getElementById("delivery-address").removeAttribute("class");
   document.getElementById("delivery-option").setAttribute("class", "hidden");
-
 });
 
 document.getElementById("pizza-next").addEventListener("click", customerInfo);
@@ -141,11 +139,11 @@ document.getElementById("custom-choice").addEventListener("click", function(even
   let elementId = event.target.getAttribute("id");
   let element = document.getElementById(`${elementId}`);
   if(element.hasAttribute("class")){
-    element.removeAttribute("class")
+    element.removeAttribute("class");
   } else {
-    element.setAttribute("class", "gray-img")
+    element.setAttribute("class", "gray-img");
   }
-})
+});
 
 $(document).ready(function() {
   $('input[name="pizza-kind"]').click(function() {
@@ -155,12 +153,3 @@ $(document).ready(function() {
       $(targetBox).show();
   });
 });
-
-document.querySelector('#scrollable').addEventListener('wheel', preventScroll, {passive: false});
-
-function preventScroll(e){
-    e.preventDefault();
-    e.stopPropagation();
-
-    return false;
-}

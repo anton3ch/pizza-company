@@ -3,9 +3,10 @@
 html {
   background-image: url(../img/bg.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   width: 100%;
   height: 120%;
+  overflow: hidden;
 }
 
 .logo {
@@ -21,8 +22,8 @@ html {
   .logo {
     width: 400px;
   }
-
 }
+
 .main {
   color: antiquewhite;
   font-family: 'Italianno', cursive;
@@ -43,7 +44,6 @@ html {
   justify-content:center;
   z-index: 2;
 }
-
 
 textarea:focus, input:focus {
   color: antiquewhite;
@@ -68,12 +68,14 @@ input, textarea {
   display: none;
 }
 
-.gray-img {
-  filter: grayscale(100%);
+label {
+  margin: 30px;
 }
 
-label {
-  padding: 20px;
+label.ingredients {
+  padding: 0;
+  width: 60px;
+  height: 60px;
 }
 
 input[type="checkbox"]  {
@@ -85,14 +87,37 @@ img {
   margin: 30px;
 }
 
+.gray-img {
+  filter: grayscale(100%);
+  /* padding: 80px; */
+  margin: 20px;
+}
+
 #custom-choice img {
-  width: 60px;
-  margin: 10px;
+  width: 80px;
+  margin: 0px;
 }
 
 button {
   padding: 20px;
   margin: 50px;
+}
+       
+.btn-grad {
+  background-image: linear-gradient(to right, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  text-align: center;
+  /* text-transform: uppercase; */
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  border-radius: 10px;
+  border:rgb(249, 124, 15);
+}
+
+.btn-grad:hover {
+  background-position: right center; /* changes the direction of the bg */
+  color: rgb(0, 0, 0);
+  text-decoration: none;
 }
 
 #receipt {
@@ -104,98 +129,106 @@ button {
   font-size: 3em;
 }
 
+/* Fire */
+.mo-fire {
+  height: auto;
+  position: absolute;
+  left: 53%;
+  transform: translateX(-50%);
+  bottom: -20%;
+  z-index: 0;
+  width: 80%;
+  opacity: 0.8;
+  padding: 0%;
+  margin: 0%;
+}
 
-  /* Fire */
+#svg-view {
+  width: 252px;
+  height: 125px;
+  left: 0px;
+}
+
+.mo-fire svg {
+  width: 100%;
+  height: auto;
+  position:relative;
+  right:40px;
+}
+
+.flame {
+  animation-name: flameDisappear;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  opacity: 0.5;
+  transform-origin: 45% 45% 0;
+}
+
+.flame.one {
+  animation-delay: 1s;
+  animation-duration: 3s;
+}
+
+.flame.two{
+  animation-duration: 5s;
+  animation-delay: 1s;
+}
+
+.flame-main {
+  animation-name: flameMovement;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.flame-main.one {
+  animation-duration: 2.2s;
+  animation-delay: 1s;
+}
+
+.flame-main.two {
+  animation-duration: 2s;
+  animation-delay: 1s;
+}
+
+.flame-main.three {
+  animation-duration: 2.1s;
+  animation-delay: 3s;
+}
+
+.flame-main.four {
+  animation-duration: 3.2s;
+  animation-delay: 4s;
+}
+
+.flame-main.five {
+  animation-duration: 2.5s;
+  animation-delay: 5s;
+}
+
+@keyframes flameMovement {
+  50% {
+    transform: scale(0.98,1.0) translate(0, 2px) rotate(-1deg);
+  }
+}
+
+@keyframes flameDisappear {
+  0%{
+    transform: translate(0) rotate(180deg);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-10px, -40px) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 900px) {
   .mo-fire {
-    height: auto;
-    position: absolute;
-    left: 53%;
-    transform: translateX(-50%);
-    bottom: -20%;
-    z-index: 0;
-    width: 80%;
-    opacity: 0.8;
-    padding: 0%;
-    margin: 0%;
-  }
-
-  #svg-view {
-    width: 252px;
-    height: 125px;
-    left: 0px;
-  }
-
-  .mo-fire svg {
-    width: 100%;
-    height: auto;
-    position:relative;
-    right:40px;
-  }
-  .flame {
-    animation-name: flameDisappear;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    opacity: 0.5;
-    transform-origin: 45% 45% 0;
-  }
-  .flame.one {
-    animation-delay: 1s;
-    animation-duration: 3s;
-  }
-  .flame.two{
-    animation-duration: 5s;
-    animation-delay: 1s;
-  }
-
-
-  .flame-main {
-    animation-name: flameMovement;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-  }
-  .flame-main.one {
-    animation-duration: 2.2s;
-    animation-delay: 1s;
-  }
-  .flame-main.two {
-    animation-duration: 2s;
-    animation-delay: 1s;
-  }
-  .flame-main.three {
-    animation-duration: 2.1s;
-    animation-delay: 3s;
-  }
-  .flame-main.four {
-    animation-duration: 3.2s;
-    animation-delay: 4s;
-  }
-  .flame-main.five {
-    animation-duration: 2.5s;
-    animation-delay: 5s;
-  }
-  @keyframes flameMovement {
-    50% {
-      transform: scale(0.98,1.0) translate(0, 2px) rotate(-1deg);
-    }
-  }
-  @keyframes flameDisappear {
-    0%{
-      transform: translate(0) rotate(180deg);
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      transform: translate(-10px, -40px) rotate(180deg);
-      opacity: 0;
-    }
-  }
-
-  @media only screen and (max-width: 900px) {
-  .mo-fire {
-    display: none;
+  display: none;
   }
 }
 
