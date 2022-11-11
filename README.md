@@ -65,28 +65,39 @@ Expected Output: Order { Pizzas: {}, customer: {}, currentId = 0 }
 Describe: Order.prototype.assignId()
 
 Test: "It should increment id by 1"
-Code: newOrder.assignId();
-Expected Output: this.currentId = 1;
+Code: const newOrder = new Order();
+      newOrder.assignId();
+Expected Output: newOrder.currentId = 1;
 
 
 Describe: Order.prototype.addPizza()
 
 Test: "It should nest pizza object inside Order object and assign Id"
-Code: newOrder.addPizza(myPizza);
-Expected Output: pizzas: {1: Pizza {toppings: ["lemon", "ginger", "coleslaw"], size: "medium", quantity: 2, cost: 0, id: 1} }
+Code: const newOrder = new Order();
+      const myPizza = new Pizza(["lemon", "ginger", "coleslaw"], "medium", 2);
+      newOrder.addPizza(myPizza);
+Expected Output: pizzas: {1: Pizza {toppings: ["lemon", "ginger", "coleslaw"], size: "medium", quantity: 2, cost: 0} }
 
 
 Describe: Order.prototype.findPizza(id)
 
 Test: "It should find a pizza object by id"
-Code: newOrder.findPizza(1)
+Code: const newOrder = new Order();
+      const myPizza = new Pizza(["lemon", "ginger", "coleslaw"], "medium", 2);
+      newOrder.assignId();
+      newOrder.addPizza(myPizza);
+      newOrder.findPizza(1);
 Expected Output: Pizza {toppings: Array(3), size: 'medium', quantity: 2, cost: 29, id: 1}
 
 
 Describe: Order.prototype.deletePizza(id)
 
 Test: "It should delete pizza object from inside Order object"
-Code: newOrder.deletePizza(1);
+Code: const newOrder = new Order();
+      const myPizza = new Pizza(["lemon", "ginger", "coleslaw"], "medium", 2);
+      newOrder.assignId();
+      newOrder.addPizza(myPizza);
+      newOrder.deletePizza(1);
 Expected Output: {pizzas: {}, ...}
 
 
@@ -98,47 +109,50 @@ Expected Output: Customer { firstName: 'John', lastName: 'Lennon',email: 'john.l
 Describe: Order.prototype.addCustomer()
 
 Test: "It should nest customer object inside Order object"
-Code: newOrder.addCustomer(newCustomer);
+Code: const newOrder = new Order();
+      newOrder.addCustomer(newCustomer);
 Expected Output: newOrder { ..., Customer { firstName: 'John', lastName: 'Lennon',email: 'john.lennon@beatles.com', address: '123 beatle lane Beatler, BT 90210' }, ... }
 
 Describe: Pizza.prototype.calculateCost()
 
 Test: "It should calculate cost of pizza based on topping quantity and size"
-Code: myPizza.calculateCost();
-Expected Output: Pizza {toppings: Array(3), size: 'medium', quantity: 1, cost: 29, id: 1}
+Code: let pizza = new Pizza(3, "medium", 1);
+      myPizza.calculateCost();
+Expected Output: Pizza {toppings: Array(3), size: 'medium', quantity: 1, cost: 29}
 
 Test: "It should calculate cost of pizza based on amount of toppings, size and pizza quantity"
-Code: myPizza.calculateCost();
-Expected Output: Pizza {toppings: Array(3), size: 'medium', quantity: 2, cost: 58, id: 1}
+Code: let pizza = new Pizza(3, "medium", 1);
+      myPizza.calculateCost();
+Expected Output: Pizza {toppings: Array(3), size: 'medium', quantity: 2, cost: 58}
 
 Test: "It should add $10 to the total price if small size is selected"
 Code: let pizza = new Pizza(3, "small", 1);
-       pizza.calculateCost()
+      pizza.calculateCost()
 Expected Output: 19
 
 Test: "It should add $20 to the total price if medium size is selected"
 Code: let pizza = new Pizza(3, "medium", 1);
-       pizza.calculateCost()
+      pizza.calculateCost()
 Expected Output: 29
 
 Test: "It should add $50 to the total price if large size is selected"
 Code: let pizza = new Pizza(3, "large", 1);
-       pizza.calculateCost()
+      pizza.calculateCost()
 Expected Output: 59
 
 Test: "It should add $100 to the total price if size is not selected"
 Code: let pizza = new Pizza(3, undefined, 1);
-       pizza.calculateCost()
+      pizza.calculateCost()
 Expected Output: 109
 
 Test: 'If submitted name is less than 4 letters long it will change this.name to "invalid name"'
 Code: let pizza = new Pizza(3, undefined, 1, "Tom");
-       pizza.checkName()
+      pizza.checkName()
 Expected Output: "invalid name"
 
 Test: "If submitted name is 4 or more letters long it will remain the same"
 Code: let pizza = new Pizza(3, undefined, 1, "Tom");
-       pizza.checkName()
+      pizza.checkName()
 Expected Output: "invalid name"
 
 
