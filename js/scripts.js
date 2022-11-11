@@ -59,6 +59,9 @@ Pizza.prototype.calculateCost = function() {
       case ("large"):
         this.cost += 50;
         break;
+      default:
+        this.cost +=100;
+        break;
     }
   }
 };
