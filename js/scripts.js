@@ -72,9 +72,10 @@ function Customer(firstName, lastName, email, address) {
 }
   
 // UI logic
-let newOrder = new Order();
 
 function customerInfo() {
+  let newOrder = new Order();
+
   const firstName = document.querySelector("input#first-name").value;
   const lastName = document.querySelector("input#last-name").value;
   const email = document.querySelector("input#email").value;
@@ -88,18 +89,20 @@ function customerInfo() {
   } else {
     $("#input-info").show();
   }
+  return newOrder;
 }
 
-function displayReceipt() {
+function displayReceipt(order) {
   const h2 = document.getElementById("h2-receipt");
   const total = document.createElement("p");
-  total.append("Your total is $" + newOrder.pizzas[1].cost);
+  total.append(`${order.customer.firstName}, your total is $${order.pizzas[1].cost} we will email your receipt to ${order.customer.email}`);
   h2.append(total);
   $('#receipt').show();
   $('#pizza-selection').hide();
 }
 
 function handleOrder() {
+  let newOrder = customerInfo();
   let size = $('input[name="pizza-size"]:checked').val();
   let pizzaKind = $('input[name="pizza-kind"]:checked').val();
   let toppings;
@@ -115,10 +118,15 @@ function handleOrder() {
     let newPizza = new Pizza (toppings, size, quantity);
     newOrder.addPizza(newPizza);
     newPizza.calculateCost();
-    displayReceipt();
+    displayReceipt(newOrder);
   } else {
     $("#input-pizza").show();
   }
+}
+
+function storeOrder(order) {
+  let newOrder = order;
+  return newOrder;
 }
 
 document.getElementById("pick-up").addEventListener("click", function(){
@@ -136,19 +144,21 @@ document.getElementById("pizza-next").addEventListener("click", customerInfo);
 document.getElementById("place-order").addEventListener("click", handleOrder);
 
 document.getElementById("custom-choice").addEventListener("click", function(event){
-  let elementId = event.target.getAttribute("id");
-  let element = document.getElementById(`${elementId}`);
-  if(element.hasAttribute("class")){
-    element.removeAttribute("class");
-  } else {
-    element.setAttribute("class", "gray-img");
+  if(event.target.hasAttribute('id')) {
+    let elementId = event.target.getAttribute("id");
+    let element = document.getElementById(`${elementId}`);
+    if(element.hasAttribute("class")){
+      element.removeAttribute("class");
+    } else {
+      element.setAttribute("class", "gray-img");
+    }
   }
 });
 
 $(document).ready(function() {
   $('input[name="pizza-kind"]').click(function() {
-      var inputValue = $(this).attr("value");
-      var targetBox = $("#" + inputValue + "-choice");
+      let inputValue = $(this).attr("value");
+      let targetBox = $("#" + inputValue + "-choice");
       $(".selectt").not(targetBox).hide();
       $(targetBox).show();
   });
