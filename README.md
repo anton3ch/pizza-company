@@ -90,17 +90,6 @@ Code: newOrder.deletePizza(1);
 Expected Output: {pizzas: {}, ...}
 
 
-Describe: Pizza.prototype.calculateCost()
-
-Test: "It should calculate cost of pizza based on topping quantity and size"
-Code: myPizza.calculateCost();
-Expected Output: Pizza {toppings: Array(3), size: 'medium', quantity: 1, cost: 29, id: 1}
-
-Test: "It should calculate cost of pizza based on amount of toppings, size and pizza quantity"
-Code: myPizza.calculateCost();
-Expected Output: Pizza {toppings: Array(3), size: 'medium', quantity: 2, cost: 58, id: 1}
-
-
 Describe: Customer()
 Test: "It should return a Customer object with firstName, lastName, email and address properties"
 Code: const newCustomer = new Customer('John', 'Lennon', 'john.lennon@beatles.com', '123 beatle lane Beatler, BT 90210');
@@ -111,6 +100,24 @@ Describe: Order.prototype.addCustomer()
 Test: "It should nest customer object inside Order object"
 Code: newOrder.addCustomer(newCustomer);
 Expected Output: newOrder { ..., Customer { firstName: 'John', lastName: 'Lennon',email: 'john.lennon@beatles.com', address: '123 beatle lane Beatler, BT 90210' }, ... }
+
+Describe: Pizza.prototype.calculateCost()
+
+Test: "It should calculate cost of pizza based on topping quantity and size"
+Code: myPizza.calculateCost();
+Expected Output: Pizza {toppings: Array(3), size: 'medium', quantity: 1, cost: 29, id: 1}
+
+Test: "It should calculate cost of pizza based on amount of toppings, size and pizza quantity"
+Code: myPizza.calculateCost();
+Expected Output: Pizza {toppings: Array(3), size: 'medium', quantity: 2, cost: 58, id: 1}
+
+Test: "It should add $10 to the total price if small size is selected"
+Code: let pizza = new Pizza(3, "small", 1);
+       pizza.calculateCost()
+Expected Output: 19
+
+
+
 </details> 
  
 ## Known Bugs
