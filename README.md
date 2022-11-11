@@ -136,6 +136,10 @@ Code: let pizza = new Pizza(3, undefined, 1, "Tom");
        pizza.checkName()
 Expected Output: "invalid name"
 
+Test: "If submitted name is 4 or more letters long it will remain the same"
+Code: let pizza = new Pizza(3, undefined, 1, "Tom");
+       pizza.checkName()
+Expected Output: "invalid name"
 
 
 </details> 
