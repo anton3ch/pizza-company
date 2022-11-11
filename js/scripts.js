@@ -39,6 +39,7 @@ Order.prototype.addCustomer = function(customer) {
 function Pizza (toppings, size, quantity) {
   this.toppings = toppings;
   this.size = size;
+  this.name = name;
   this.quantity = quantity;
   this.cost = 0;
 }
@@ -65,6 +66,12 @@ Pizza.prototype.calculateCost = function() {
     }
   }
 };
+
+Pizza.prototype.checkName = function() {
+  if (this.name.length < 4) {
+    this.name = "invalid name"
+  }
+}
 
 //Business logic for Customer
 function Customer(firstName, lastName, email, address) {
