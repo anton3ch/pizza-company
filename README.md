@@ -121,6 +121,11 @@ Code: let pizza = new Pizza(3, "medium", 1);
        pizza.calculateCost()
 Expected Output: 29
 
+Test: "It should add $50 to the total price if large size is selected"
+Code: let pizza = new Pizza(3, "large", 1);
+       pizza.calculateCost()
+Expected Output: 59
+
 
 
 </details> 
