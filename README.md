@@ -131,6 +131,11 @@ Code: let pizza = new Pizza(3, undefined, 1);
        pizza.calculateCost()
 Expected Output: 109
 
+Test: 'If submitted name is less than 4 letters long it will change this.name to "invalid name"'
+Code: let pizza = new Pizza(3, undefined, 1, "Tom");
+       pizza.checkName()
+Expected Output: "invalid name"
+
 
 
 </details> 
